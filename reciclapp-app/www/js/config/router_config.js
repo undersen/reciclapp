@@ -25,7 +25,13 @@
 						cache: false,
 						url: "/",
 						templateUrl: "templates/splash.html",
-						controller: ""
+						controller: "SplashController"
+          })
+          .state("register", {
+						cache: false,
+						url: "/register",
+						templateUrl: "templates/register.html",
+						controller: "RegisterController"
           });
 
 

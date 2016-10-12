@@ -1,0 +1,77 @@
+<ion-view view-title="" hide-nav-bar="true" ng-init="init();">
+  <ion-content scroll="false" class="background-login" style="padding:30px;padding-top:70px">
+
+    <div class="" style="background-color:white;width:85vw;height:80vh;padding:20px;">
+
+      <h6 class="text-center logotxtReciclapp" style="margin-bottom:20px;color:black;font-size:30px; " >
+        Bienvenido a RECICL<strong style="font-weight:800; font-family:DINPro-Bold">APP</strong>
+      </h6>
+
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4"><img src="./img/profile_img.png" ng-src="{{user.avatar}}"  alt="" class="responsive-img circle" ></div>
+        <div class="col s4"></div>
+      </div>
+      <h6 class="center-align">Comencemos con tu registro</h6>
+
+      <div class="">
+
+        <div class="input-field col s12" >
+          <input  id="first_name" type="text" class="validate" ng-model="user.email" disabled style="margin-bottom:10px;">
+
+        </div>
+
+        <div class="input-field col s12" >
+          <input  id="first_name" type="text" class="validate" ng-model="user.name" style="margin-bottom:10px;">
+          <label for="first_name">Nombre</label>
+        </div>
+
+        <div class="input-field col s12" >
+          <input  id="first_name" type="text" class="validate" style="margin-bottom:10px;">
+          <label for="first_name">Telefono</label>
+        </div>
+
+      </div>
+
+      <div class="card-action right-align" style="margin-top:10px;">
+             <a href="#">Continuar <i class="fa fa-arrow-right" aria-hidden="true"></i> </a>
+           </div>
+
+    </div>
+
+
+    <div class="" style="background-color:white;width:85vw;height:80vh;padding:20px; display:none;">
+
+      <h6 class="text-center logotxtReciclapp" style="margin-bottom:20px;color:black;font-size:30px; " >
+      Eres comercio ?</strong>
+      </h6>
+
+      Se define comercio como ...
+
+      <p>
+     <input type="checkbox" id="test5" ng-model="user.isComerce" ng-click="" />
+     <label for="test5">Si, si soy comercio</label>
+   </p>
+
+
+
+
+
+    </div>
+
+    <!-- <div class="">
+      <img src="img/bottom_cool.png" alt="" style="position:absolute;bottom:-40px;width:100vw;" />
+    </div> -->
+
+    <style >
+
+    .row{
+      padding:0px;
+    }
+    .s4{
+      padding:0px;
+    }
+    </style>
+
+  </ion-content>
+</ion-view>

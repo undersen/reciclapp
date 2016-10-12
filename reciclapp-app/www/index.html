@@ -3,38 +3,43 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+  <link href="css/style.css" rel="stylesheet">
+  <!-- <link href="css/check.css" rel="stylesheet"> -->
+  <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta content="yes" name="apple-touch-fullscreen">
   <title></title>
 
   <link rel="manifest" href="manifest.json">
 
-  <!-- un-comment this code to enable service worker
-  <script>
-  if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('service-worker.js')
-  .then(() => console.log('service worker installed'))
-  .catch(err => console.log('Error', err));
-}
-</script>-->
 
+ <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <link href="lib/ionic/css/ionic.css" rel="stylesheet">
 <link href="css/style.css" rel="stylesheet">
+<link href="lib/css/materialize.css" rel="stylesheet">
+<link href="./css/font-awesome.css" rel="stylesheet">
+<script src="lib/js/materialize.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
-<script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
-<script src="cordova.js"></script>
 
-<script src="lib/ngstorage/ngStorage.js"></script>
+
 
 <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
 <link href="css/ionic.app.css" rel="stylesheet">
 -->
 
 <!-- ionic/angularjs js -->
-<script src="lib/ionic/js/ionic.bundle.js"></script>
 
-<script src="js/config/router_config.js"></script>
-<script src="js/config/constant_config.js"></script>
-<script src="js/config/platform_config.js"></script>
-<script src="js/config/run.js"></script>
+<script src="lib/ionic/js/ionic.bundle.js"></script>
+<script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+<script src="cordova.js"></script>
+<script src="lib/ngstorage/ngStorage.js"></script>
+<link href="lib/angular-ui-select/dist/select.css" rel="stylesheet" type="text/css">
+<script src="lib/angular-ui-select/dist/select.js"></script>  <link href="lib/angular-ui-select/dist/select.css" rel="stylesheet" type="text/css">
+<script src="lib/angular-ui-select/dist/select.js"></script>
+
+
+
 
 <!-- cordova script (this will be a 404 during development) -->
 <script src="cordova.js"></script>
@@ -43,8 +48,38 @@
 <script src="js/app.js"></script>
 
 
+
+
+<script src="./js/config/router_config.js"></script>
+<script src="./js/config/constans_config.js"></script>
+<script src="./js/config/platform_config.js"></script>
+
+
+<!-- Controladores -->
+<script src="./js/controllers/splash_controller.js"></script>
+<script src="./js/controllers/register_controller.js"></script>
+
+<!-- Model -->
+<script src="./js/models/facebook_user_model.js"></script>
+
+
+<!-- Services -->
+<script src="./js/services/storage_facebook_user.js"></script>
+
+
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlXbsKMw-MxZkcmjDAzGKFYqR_TucZ5Vk&amp;libraries=places"></script>
 </head>
 <body ng-app="reciclapp">
+  <div id="fb-root"></div>
+
+  <ion-nav-view>
+
+
+
+
+
+</ion-nav-view>
 
 
 </body>
