@@ -23,11 +23,11 @@
             <div class = "box box1" style="color:white;">
               <div class="input-group">
   <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" placeholder="Username" ng-model="user.email" aria-describedby="basic-addon1">
 </div>
 <div class="input-group" style="margin-top:5px;">
   <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" aria-describedby="basic-addon1">
+  <input type="text" class="form-control" placeholder="Username" ng-model="user.password" aria-describedby="basic-addon1">
 </div>
 </div>
 
@@ -65,7 +65,7 @@
   <a class="waves-effect waves-light btn btn-large" style="width:100%;background-color:#3b5998" ng-click="loginWithFacebook();">Entrar con facebook</a>
 </br>
 </br>
-  <a class="waves-effect waves-light btn btn-large" style="width:100%;background-color: darkcyan;">Iniciar sesion</a>
+  <a class="waves-effect waves-light btn btn-large" style="width:100%;background-color: darkcyan;" ng-click="login();">Iniciar sesion</a>
 
   <div class="" style="margin-top:20px;">
         <span style="color:white;" class="center-align">Aun no tienes una cuenta ? <a href="#" style="color:" ng-click="register()">Registrate</a></span>

@@ -3,7 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-  <link href="css/style.css" rel="stylesheet">
+
+
   <!-- <link href="css/check.css" rel="stylesheet"> -->
   <meta content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" name="viewport">
   <meta content="yes" name="apple-mobile-web-app-capable">
@@ -14,12 +15,23 @@
 
 
  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-<link href="lib/ionic/css/ionic.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="lib/css/materialize.css" rel="stylesheet">
+
+<link href="./css/style.css" rel="stylesheet">
 <link href="./css/font-awesome.css" rel="stylesheet">
-<script src="lib/js/materialize.js"></script>
- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+<link href="lib/halo/css/keyframes.css" rel="stylesheet" type="text/css">
+<link href="lib/halo/css/materialize.min.css" rel="stylesheet" type="text/css">
+<link href="lib/halo/css/swiper.css" rel="stylesheet" type="text/css">
+<link href="lib/halo/css/swipebox.min.css" rel="stylesheet" type="text/css">
+<link href="lib/halo/css/style.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet">
+<link href="css/animate.css" rel="stylesheet">
+<link href="./lib/ionic/css/ionic.css" rel="stylesheet">
+<link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+
+
+<link href="lib/font-awesome-animation/dist/font-awesome-animation.css" rel="stylesheet" type="text/css">
+
+
 
 
 
@@ -39,6 +51,16 @@
 <script src="lib/angular-ui-select/dist/select.js"></script>
 
 
+<script src="lib/halo/js/jquery-2.1.0.min.js"></script>
+<script src="lib/halo/js/jquery.swipebox.min.js"></script>
+<script src="lib/halo/js/jquery.smoothState.min.js"></script>
+<script src="lib/halo/js/materialize.min.js"></script>
+<script src="lib/halo/js/swiper.min.js"></script>
+<script src="lib/halo/js/jquery.mixitup.min.js"></script>
+<script src="lib/halo/js/masonry.min.js"></script>
+<script src="lib/halo/js/chart.min.js"></script>
+<script src="lib/halo/js/functions.js"></script>
+<script src="lib/js/materialize.js"></script>
 
 
 <!-- cordova script (this will be a 404 during development) -->
@@ -58,6 +80,12 @@
 <!-- Controladores -->
 <script src="./js/controllers/splash_controller.js"></script>
 <script src="./js/controllers/register_controller.js"></script>
+<script src="./js/controllers/user/dashboardController.js"></script>
+<script src="./js/controllers/user/friendlyCommerceController.js"></script>
+<script src="./js/controllers/user/eventsController.js"></script>
+<script src="./js/controllers/minimarket/dashboardController.js"></script>
+
+
 
 <!-- Model -->
 <script src="./js/models/facebook_user_model.js"></script>
@@ -69,6 +97,7 @@
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlXbsKMw-MxZkcmjDAzGKFYqR_TucZ5Vk&amp;libraries=places"></script>
+
 </head>
 <body ng-app="reciclapp">
   <div id="fb-root"></div>
@@ -87,13 +116,13 @@
 <script src="lib/facebookConnectorPlugin.js"></script>
 
 <script>
-window.fbAsyncInit = function() {
-  FB.init({
-    appId      : '1007585155963116',
-    xfbml      : true,
-    version    : 'v2.6'
-  });
-};
+// window.fbAsyncInit = function() {
+//   FB.init({
+//     appId      : '1007585155963116',
+//     xfbml      : true,
+//     version    : 'v2.6'
+//   });
+// };
 
 (function(d, s, id){
   var js, fjs = d.getElementsByTagName(s)[0];

@@ -122,7 +122,7 @@ src: url("../fonts/Tipografia Reciclapp/DINPro-Light.woff")format('woff');
 }
 
 .button-clear.button-clear {
-    color:#fff;
+    color:#fff !important;
 }
 
 .title.title-left.header-item {
