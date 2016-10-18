@@ -27,6 +27,7 @@
 <link href="css/animate.css" rel="stylesheet">
 <link href="./lib/ionic/css/ionic.css" rel="stylesheet">
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
+<link href="css/collapsible.css" rel="stylesheet">
 
 
 <link href="lib/font-awesome-animation/dist/font-awesome-animation.css" rel="stylesheet" type="text/css">
@@ -62,6 +63,9 @@
 <script src="lib/halo/js/functions.js"></script>
 <script src="lib/js/materialize.js"></script>
 
+<link rel='stylesheet' href='./lib/sc-date-time/dist/sc-date-time.css'>
+<script src='./lib/sc-date-time/dist/sc-date-time.js'></script>
+
 
 <!-- cordova script (this will be a 404 during development) -->
 <script src="cordova.js"></script>
@@ -83,6 +87,7 @@
 <script src="./js/controllers/user/dashboardController.js"></script>
 <script src="./js/controllers/user/friendlyCommerceController.js"></script>
 <script src="./js/controllers/user/eventsController.js"></script>
+<script src="./js/controllers/user/giftsController.js"></script>
 <script src="./js/controllers/minimarket/dashboardController.js"></script>
 
 
@@ -116,13 +121,13 @@
 <script src="lib/facebookConnectorPlugin.js"></script>
 
 <script>
-// window.fbAsyncInit = function() {
-//   FB.init({
-//     appId      : '1007585155963116',
-//     xfbml      : true,
-//     version    : 'v2.6'
-//   });
-// };
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : '1007585155963116',
+    xfbml      : true,
+    version    : 'v2.6'
+  });
+};
 
 (function(d, s, id){
   var js, fjs = d.getElementsByTagName(s)[0];
@@ -132,4 +137,6 @@
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
+
+
 </html>

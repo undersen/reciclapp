@@ -13,7 +13,7 @@
           <div class="col s4"><img ng-src="{{user.avatar}}" alt="" class="circle responsive-img" id="thumbnailImage"> <!-- notice the "circle" class --></div>
           <div class="col s4"></div>
         </div>
-        <h6 class="center-align">Comencemos con tu registro</h6>
+        <h4 class="center-align">Comencemos con tu registro</h4>
 
         <div class="input-field col s12" style="margin-top: 0px;" >
           <input  id="first_name" type="text" class="validate" ng-model="user.email" disabled style="margin-bottom:10px;">
@@ -22,12 +22,12 @@
 
         <div class="input-field col s12" style="margin-top: 0px;">
           <input  id="first_name" type="text" class="validate" ng-model="user.name" style="margin-bottom:10px;">
-          <!-- <label for="first_name">Nombre</label> -->
+          <label for="first_name" class="active">Nombre</label>
         </div>
 
         <div class="input-field col s12" style="margin-top: 0px;">
-          <input  id="first_name" type="text" class="validate" style="margin-bottom:10px;">
-          <label for="first_name">Telefono</label>
+          <input  id="phone" type="text" class="validate" style="margin-bottom:10px;" placeholder="+56912345678">
+          <label for="phone" class="active">Telefono</label>
         </div>
         <div class="waves-effect waves-light right-align width-100 delay-4" ng-click="nextInfo();" ><a class="btn-flat"   style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div>
       </div>
@@ -37,20 +37,25 @@
 
     <!-- Second info -->
 
-    <div class="signup-form animated  delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="second-info">
+    <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="second-info">
 
-      <h6 class="center-align">Como deseas registrarte ?</h6>
+      <h4 class="center-align">Como deseas registrarte ?</h4>
 
 
       <div class="col s12 ">
        <div class="card-panel grey lighten-5 z-depth-1">
          <div class="row valign-wrapper">
-           <div class="col s2">
-             <img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+           <div class="col s2 row">
+
+   <input class="with-gap" name="group3" type="radio" id="normal-user" ng-click="changeUserType('user');" checked />
+   <label for="normal-user">Usuario</label>
+
+
+             <img src="img/minimarket.png" alt="" class="responsive-img"> <!-- notice the "circle" class -->
            </div>
            <div class="col s10">
              <span class="black-text">
-               This is a square image. Add the "circle" class to it to make it appear circular.
+               Usuario base en donde declaras cuando quieres y un recolector se presentara en tu direccion.
              </span>
            </div>
          </div>
@@ -62,11 +67,13 @@
        <div class="card-panel grey lighten-5 z-depth-1">
          <div class="row valign-wrapper">
            <div class="col s2">
-             <img src="images/yuna.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+             <input class="with-gap" name="group3" type="radio" id="minimarket" ng-click="changeUserType('minimarket');" />
+             <label for="minimarket">Comercio</label>
+             <img src="img/minimarket.png" alt="" class="responsive-img"> <!-- notice the "circle" class -->
            </div>
            <div class="col s10">
              <span class="black-text">
-               This is a square image. Add the "circle" class to it to make it appear circular.
+               Minimarket o negocio declaras y se hara el retiro semanal segun sea las fechas que eliges.
              </span>
            </div>
          </div>
@@ -82,9 +89,9 @@
 
 
 
-    <!--    -->
+    <!--  thirdInfo  -->
 
-    <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="third-info">
+    <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="third-info-user">
 
       <h6 class="center-align">Ingresa tu direcci&oacute;n</h6>
 
@@ -102,6 +109,25 @@
         <input  id="first_name" type="text" class="validate" style="margin-bottom:10px;">
         <label for="first_name">Telefono</label>
       </div>
+      <div class="waves-effect waves-light right-align width-100 delay-4"  ng-click="nextInfoPersonal();"><a class="btn-flat " style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div>
+    </div>
+
+
+    <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="third-info-commerce">
+
+      <h6 class="center-align">Ingresa tu direcci&oacute;n de comercio</h6>
+
+      <div class="input-field col s8" style="margin-top: 0px;" >
+        <input  id="address-name" type="text" class="validate" ng-model="user.address" disabled style="margin-bottom:10px;">
+        <label for="address-name">Buscar direccion</label>
+      </div>
+
+
+
+      <div id="map" style="height:20vh;"></div>
+
+
+
       <div class="waves-effect waves-light right-align width-100 delay-4"  ng-click="nextInfoPersonal();"><a class="btn-flat " style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div>
     </div>
 

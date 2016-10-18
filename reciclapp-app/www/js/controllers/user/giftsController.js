@@ -6,7 +6,7 @@ CONTROLLER DEFINITION
 =============================================================================
 */
 (function() {
-  this.app.controller("UserDashboardController", ["$scope", "$state",
+  this.app.controller("GiftsController", ["$scope", "$state",
   function($scope, $state) {
 
     $scope.init = function() {
@@ -18,12 +18,8 @@ CONTROLLER DEFINITION
       $(this).toggleClass('active');
     });
 
-    $scope.goRecycle = function() {
+    $scope.goRecycle= function() {
       debugger;
-    }
-
-    $scope.goGifts =  function() {
-      $state.go("user.gifts");
     }
 
   }]);

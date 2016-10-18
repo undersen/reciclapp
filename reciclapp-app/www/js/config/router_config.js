@@ -61,6 +61,18 @@
 
 		})
 
+		.state("user.gifts", {
+			cache: false,
+			url: "/gifts",
+			views: {
+				'menuContent': {
+					templateUrl: "templates/user/gifts.html",
+					controller: "GiftsController"
+				}
+			}
+
+		})
+
 		.state("user.events", {
 			cache: false,
 			url: "/events",

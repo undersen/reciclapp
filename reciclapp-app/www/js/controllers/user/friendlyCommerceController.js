@@ -9,27 +9,32 @@ CONTROLLER DEFINITION
   this.app.controller("FriendlyCommerceController", ["$scope", "$state","$cordovaGeolocation",
   function($scope, $state,$cordovaGeolocation) {
 
+
+    var mapOptions ={}
+
     $scope.init = function() {
+
+      $scope.loadMap();
 
       var posOptions = {timeout: 10000, enableHighAccuracy: false};
       $cordovaGeolocation
       .getCurrentPosition(posOptions)
       .then(function (position) {
 
-        debugger;
+
 
         $scope.loadMap(position.coords.latitude,position.coords.longitude);
 
       }, function(err) {
-        // error
+        materialize.toast("Verifica tu conexion y GPS",4000);
       });
 
     };
 
 
     $scope.loadMap = function (lat,long) {
-
-      var mapOptions = {
+      if (lat != undefined || long != undefined){
+       mapOptions = {
         center: {lat:lat, lng: long},
         zoom: 15,
         mapTypeId: google.maps.MapTypeId.ROADMAP
@@ -45,8 +50,8 @@ CONTROLLER DEFINITION
         }
       ]
 
-      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
+  $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
       google.maps.event.addListenerOnce($scope.map, 'idle', function(){
 
         var marker = new google.maps.Marker({
@@ -56,46 +61,72 @@ CONTROLLER DEFINITION
         });
 
 
-        var marker = new google.maps.Marker({
+        var marker1 = new google.maps.Marker({
           map: $scope.map,
           animation: google.maps.Animation.DROP,
-          position: {lat:lat, lng: long}
-        });
-
-
-        var marker = new google.maps.Marker({
-          map: $scope.map,
-          animation: google.maps.Animation.DROP,
-          position: {lat:-33.129876, lng: -69.83123},
+          position: {lat:lat+0.00093, lng: long-0.000064},
           icon: "../img/marker.png"
         });
 
-        var marker = new google.maps.Marker({
+        var marker2 = new google.maps.Marker({
           map: $scope.map,
           animation: google.maps.Animation.DROP,
-          position: {lat:-32.129876, lng: -69.93123},
+          position: {lat:lat+0.0073, lng: long+0.0074},
           icon: "../img/marker.png"
         });
 
 
-        var marker = new google.maps.Marker({
+        var marker3 = new google.maps.Marker({
           map: $scope.map,
           animation: google.maps.Animation.DROP,
-          position: {lat:-33.429876, lng: -70.23123},
+          position: {lat:lat+0.00073, lng: long+0.0004},
           icon: "../img/marker.png"
         });
 
 
+        var contentString = '<div id="content">'+
+        '<div id="siteNotice">'+
+        '</div>'+
+        '<h1 id="firstHeading" class="firstHeading">Negocio juanito</h1>'+
+        '<div id="bodyContent"></div>'+
+        '</div>';
 
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
 
+        marker.addListener('click', function() {
+          infowindow.open(map, marker1);
+        });
 
+        marker.addListener('click', function() {
+          infowindow.open(map, marker2);
+        });
 
+        marker.addListener('click', function() {
+          infowindow.open(map, marker3);
+        });
       });
 
 
+    }
+    else{
+
+       mapOptions = {
+        center: {lat:-33.91721, lng: -69.22630},
+        zoom: 15,
+        mapTypeId: google.maps.MapTypeId.ROADMAP
+
+
+      };
+      $scope.map = new google.maps.Map(document.getElementById("map"), mapOptions);
 
 
     }
+
+
+
+  }
 
   }]);
 }).call(this);
