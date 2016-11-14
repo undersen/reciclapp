@@ -7,7 +7,8 @@
 		// Set up the various states which the app can be in.
 		// Each state"s controller can be found in controllers.js
 
-		$httpProvider.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";
+		// $httpProvider.defaults.headers.post["Content-Type"] = "application/json; charset=UTF-8";
+		$httpProvider.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded; charset=UTF-8';
 		$httpProvider.defaults.headers.put["Content-Type"] = "application/json; charset=UTF-8";
 		$httpProvider.defaults.headers.patch["Content-Type"] = "application/json; charset=UTF-8";
 
@@ -24,19 +25,22 @@
 			templateUrl: "templates/splash.html",
 			controller: "SplashController"
 		})
+
 		.state("register", {
 			cache: false,
 			url: "/register",
 			templateUrl: "templates/register.html",
 			controller: "RegisterController"
 		})
+
 		.state("user", {
-			url: "/wefix/user/",
+			url: "/user",
 			cache: false,
-			abstract: false,
+			abstract: true,
 			templateUrl: "templates/user/menu.html",
 			controller: "UserDashboardController"
 		})
+
 		.state("user.dashboard", {
 			cache: false,
 			url: "/dashboard",
@@ -58,6 +62,28 @@
 					controller: "FriendlyCommerceController"
 				}
 			}
+		})
+
+		.state("user.recycle", {
+			cache: false,
+			url: "/recycle",
+			views: {
+				'menuContent': {
+					templateUrl: "templates/user/recycle.html",
+					controller: "RecycleController"
+				}
+			}
+		})
+
+		.state("user.profile", {
+			cache: false,
+			url: "/profile",
+			views: {
+				'menuContent': {
+					templateUrl: "templates/user/profile.html",
+					controller: "ProfileController"
+				}
+			}
 
 		})
 
@@ -70,7 +96,6 @@
 					controller: "GiftsController"
 				}
 			}
-
 		})
 
 		.state("user.events", {

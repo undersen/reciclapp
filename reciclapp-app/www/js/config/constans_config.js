@@ -2,7 +2,9 @@
 
 (function() {
 	this.app.constant("ENV", {
-    "LOCAL": "http://52.88.233.73/api/", 
+    "LOCALNEW": "http://reciclapp.cl/rest_reciclapp_des_new/",
+		"LOCAL": "http://reciclapp.cl/rest_reciclapp_des/",
+		"STAGE": "http://reciclapp.cl/rest_reciclapp/",
 		"FACEBOOK": "https://graph.facebook.com/v2.6/"
 	});
 }).call(this);

@@ -6,18 +6,25 @@ CONTROLLER DEFINITION
 =============================================================================
 */
 (function() {
-  this.app.controller('SplashController', ['$scope',"$cordovaFacebook","UserFacebookModel","StorageFacebookService","$state",
-  function($scope,$cordovaFacebook,UserFacebookModel,StorageFacebookService,$state) {
+  this.app.controller('SplashController', ['$scope',"$cordovaFacebook","UserFacebookModel","StorageFacebookService","$state",'User','StorageUserService',
+  function($scope,$cordovaFacebook,UserFacebookModel,StorageFacebookService,$state,User,StorageUserService) {
 
     $scope.user={}
 
-    $scope.init = function() {
-      //ask if the account form facebook exist
-      // if existe ask if status is connected
-      //if isnt connected make login
+    $scope.init = function()
+    {
+      debugger;
+      if(StorageUserService.getCurrentUser()){
+        $state.go('user.dashboard')
+      }
+
+    }
 
 
 
+    $scope.register = function() {
+      $state.go('register');
+      debugger;
     }
 
 
@@ -40,25 +47,33 @@ CONTROLLER DEFINITION
     };
 
 
-    $scope.login = function() {
-
-      debugger;
-      if ($scope.user.email == "user@reciclapp.cl" && $scope.user.password == "12345678"){
-
-        $state.go("user.dashboard");
-
-      }else if ($scope.user.email == "company@reciclapp.cl" && $scope.user.password == "12345678") {
-
-        $state.go("minimarket.dashboard");
-
+    $scope.login = function(user) {
+      if (user.email == undefined || user.email == ''){
+        Materialize.toast('Completa tu correo',3000);
+          return;
+      }else if (user.email == undefined || user.email == ''){
+        Materialize.toast('Completa tu password',3000);
+        return;
       }else {
-        $state.go("user.dashboard");
-      }
-    }
+        user.password = md5(user.password)
+        User.Login(user).then(function(response){
+          debugger;
 
-    $scope.register= function() {
-      debugger;
-    }
+
+          if (response.data.estado == '1') {
+            if(response.data.usuario.persona_comercio == 1 || response.data.usuario.persona_comercio== '1')
+            {
+              console.log('its commerce');
+            }else if (response.data.usuario.persona_comercio == 0 || response.data.usuario.persona_comercio== '0'){
+              StorageUserService.setCurrentUser(response.data.usuario);
+              $state.go('user.dashboard');
+            }
+          } else {Materialize.toast('Usuario sin registro',3000);}
+        },function(error){console.log(error);})
+      }
+  }
+
+
 
 
   }]);

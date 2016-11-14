@@ -28,6 +28,8 @@
 <link href="./lib/ionic/css/ionic.css" rel="stylesheet">
 <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
 <link href="css/collapsible.css" rel="stylesheet">
+<link href="./lib/ion-google-place/ion-google-place.css" rel="stylesheet">
+<link href="css/collapsible.css" rel="stylesheet">
 
 
 <link href="lib/font-awesome-animation/dist/font-awesome-animation.css" rel="stylesheet" type="text/css">
@@ -62,6 +64,8 @@
 <script src="lib/halo/js/chart.min.js"></script>
 <script src="lib/halo/js/functions.js"></script>
 <script src="lib/js/materialize.js"></script>
+<script src="./lib/ion-google-place/ion-google-place.js" rel="stylesheet"></script>
+
 
 <link rel='stylesheet' href='./lib/sc-date-time/dist/sc-date-time.css'>
 <script src='./lib/sc-date-time/dist/sc-date-time.js'></script>
@@ -75,33 +79,54 @@
 
 
 
+<!-- <script src="./js/config/seed_address_data.js"></script> -->
 
 <script src="./js/config/router_config.js"></script>
 <script src="./js/config/constans_config.js"></script>
 <script src="./js/config/platform_config.js"></script>
 
 
-<!-- Controladores -->
+<!-- Controladores wachos -->
 <script src="./js/controllers/splash_controller.js"></script>
 <script src="./js/controllers/register_controller.js"></script>
+
+<!-- Controlador de usuarios -->
 <script src="./js/controllers/user/dashboardController.js"></script>
 <script src="./js/controllers/user/friendlyCommerceController.js"></script>
 <script src="./js/controllers/user/eventsController.js"></script>
 <script src="./js/controllers/user/giftsController.js"></script>
+<script src="./js/controllers/user/recycleController.js"></script>
+<script src="./js/controllers/user/profileController.js"></script>
+<script src="./js/controllers/user/competitionsController.js"></script>
+<script src="./js/controllers/user/giftController.js"></script>
+<script src="./js/controllers/user/categoryGift.js"></script>
+
+<!-- controlador de minimarket -->
 <script src="./js/controllers/minimarket/dashboardController.js"></script>
 
 
 
 <!-- Model -->
 <script src="./js/models/facebook_user_model.js"></script>
+<script src="./js/models/user_model.js"></script>
+<script src="./js/models/address_model.js"></script>
+<script src="./js/models/recycle_model.js"></script>
 
 
 <!-- Services -->
 <script src="./js/services/storage_facebook_user.js"></script>
+<script src="./js/services/storage_user.js"></script>
+<script src="./js/services/collections.js"></script>
+<script src="./js/services/storage_regions.js"></script>
+<script src="./js/services/storage_address.js"></script>
 
+<script src="./lib/md5.js"></script>
 
 
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDlXbsKMw-MxZkcmjDAzGKFYqR_TucZ5Vk&amp;libraries=places"></script>
+
+
+
 
 </head>
 <body ng-app="reciclapp">
@@ -111,14 +136,63 @@
 
 
 
+    <div id="modal1" class="modal hide" >
+      <div class="modal-content">
+        <h4>Utilizar gps <i class="fa fa-map-marker" aria-hidden="true"></i></h4>
+        <p style="color;">Reciclapp deseas utilizar el gps para obtener tu posicion</p>
+      </div>
+      <div class="modal-footer">
+        <a style="font-weight: 500;color:#2ca8ad" class=" modal-action modal-close waves-effect waves-light btn-flat" id="loadGps" >Aceptar</a>
+         <a style="font-weight: 500;" id="cancelGps" class=" modal-action modal-close waves-effect waves-light btn-flat">Cancelar</a>
+      </div>
+    </div>
+
+    <div id="modalRegion" class="modal hide" >
+      <div class="modal-content">
+        <h4>Ooops :c </h4>
+        <p style="color;">Reciclapp aun no esta en region</p>
+      </div>
+      <div class="modal-footer">
+        <a style="font-weight: 500;color:#2ca8ad" class=" modal-action modal-close waves-effect waves-light btn-flat" id="accept1">Aceptar</a>
+      </div>
+    </div>
+
+    <div id="modalCommune" class="modal hide" >
+      <div class="modal-content">
+        <h4>Ooops :c </h4>
+        <p style="color;">Reciclapp aun no esta en tu comuna</p>
+      </div>
+      <div class="modal-footer">
+        <a style="font-weight: 500;color:#2ca8ad" class=" modal-action modal-close waves-effect waves-light btn-flat" id="accept2">Aceptar</a>
+      </div>
+    </div>
+
+    <script id="my-modal.html" type="text/ng-template">
+  <ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">My Modal title</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+    </ion-content>
+  </ion-modal-view>
+</script>
+
+
+
 
 
 </ion-nav-view>
 
 
+
+
+
 </body>
 
 <script src="lib/facebookConnectorPlugin.js"></script>
+
+
 
 <script>
 window.fbAsyncInit = function() {
@@ -137,6 +211,9 @@ window.fbAsyncInit = function() {
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));
 </script>
+
+
+
 
 
 </html>

@@ -1,0 +1,72 @@
+<ion-view   hide-back-button="true" ng-init="init()">
+  <ion-content>
+
+
+    <h4 class="center" style="font-weight:100;">Cuanto vas a reciclar hoy</h4>
+
+    <div class="col s12 row" style="margin-bottom:0px;">
+      <div class="row" style="margin-top:10px;">
+
+        <div class="col s3">
+          <p class="white-text" style="color: #a5a2a2 !important;text-align: center;">Latas</p>
+          <div class="chip"><input type="number" ng-model="declaration.can" style="text-align: center;" name="name" min="0" value="0"></div>
+        </div>
+        <div class="col s3">
+          <p class="white-text" style="color: #a5a2a2 !important;text-align: center;">Vidrio</p>
+          <div class="chip"><input type="number" ng-model="declaration.glass" style="text-align: center;" name="name" min="0" value="0"></div>
+        </div>
+        <div class="col s3">
+          <p class="white-text" style="color: #a5a2a2 !important;text-align: center;">Plastico</p>
+          <div class="chip"><input type="number" ng-model="declaration.plastic" style="text-align: center;" name="name" min="0" value="0"></div>
+        </div>
+        <div class="col s3">
+          <p class="white-text" style="color: #a5a2a2 !important;text-align: center;">Carton</p>
+          <div class="chip"><input type="number" ng-model="declaration.paperboard" style="text-align: center;" name="name" min="0" value="0"></div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s4">
+
+     <p>
+       <input class="with-gap" ng-model="declaration.schedule" ng-value="1" name="group1" type="radio" id="first" />
+       <label for="first" style="font-size:14px;">10:00 - 12:00</label>
+     </p>
+     <p>
+       <input class="with-gap" ng-model="declaration.schedule" ng-value="2" name="group1" type="radio" id="second" />
+       <label for="second" style="font-size:14px;">17:00 - 19:00</label>
+     </p>
+     <p>
+       <input class="with-gap" ng-model="declaration.schedule" ng-value="3" name="group1" type="radio" id="third"  />
+       <label for="third" style="font-size:14px;">19:00 - 21:00</label>
+     </p>
+
+      </div>
+      <div class="col s8">
+        <div class="input-field col s12" style="margin-top:0px;padding:0px;">
+          <textarea id="textarea1" class="materialize-textarea" ng-model="declaration.observation" length="120"></textarea>
+          <label for="textarea1">Observaciones</label>
+        </div>
+      </div>
+    </div>
+
+        <select class="browser-default" ng-model="declaration.addressId" ng-change="loadMap(declaration,address)" ng-init="loadMap(declaration,address)">
+         <option value="" disabled selected>Seleccione una direccion</option>
+        <option ng-repeat="address in addresses"  value="{{address.id_dir}}" >{{address.nombre}}</option>
+      </select>
+
+       <!-- <select class="browser-default" ng-model="declaration.addressId" ng-options="address.nombre for address in addresses" ng-init="loadMap(declaration);" ng-change="loadMap(declaration);">
+         <option disabled value="a">-- choose color --</option>
+      </select> -->
+
+
+    <div class="" id="map" style="height:30vh;">
+    </div>
+
+    <a class="waves-effect waves-light btn" style="width:100%" ng-click="declareRecycle();">Declarar</a>
+
+
+
+
+  </ion-content>
+</ion-view>

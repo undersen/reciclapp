@@ -1,157 +1,208 @@
 <ion-view view-title="" hide-nav-bar="true" ng-init="init();">
-  <ion-content scroll="false" class="background-login" style="padding:30px;padding-top:70px">
+  <ion-content scroll="true" class="background-login" >
 
     <!-- first info -->
 
     <div class="signup-form animated  delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="first-info">
-      <h6 class="text-center logotxtReciclapp" style="margin-bottom:20px;color:black;font-size:30px;margin-bottom:10px;" >
-        Bienvenido a RECICL<strong style="font-weight:800; font-family:DINPro-Bold">APP</strong>
-      </h6>
-      <div>
-        <div class="row">
-          <div class="col s4"></div>
-          <div class="col s4"><img ng-src="{{user.avatar}}" alt="" class="circle responsive-img" id="thumbnailImage"> <!-- notice the "circle" class --></div>
-          <div class="col s4"></div>
-        </div>
-        <h4 class="center-align">Comencemos con tu registro</h4>
-
-        <div class="input-field col s12" style="margin-top: 0px;" >
-          <input  id="first_name" type="text" class="validate" ng-model="user.email" disabled style="margin-bottom:10px;">
-
-        </div>
-
-        <div class="input-field col s12" style="margin-top: 0px;">
-          <input  id="first_name" type="text" class="validate" ng-model="user.name" style="margin-bottom:10px;">
-          <label for="first_name" class="active">Nombre</label>
-        </div>
-
-        <div class="input-field col s12" style="margin-top: 0px;">
-          <input  id="phone" type="text" class="validate" style="margin-bottom:10px;" placeholder="+56912345678">
-          <label for="phone" class="active">Telefono</label>
-        </div>
-        <div class="waves-effect waves-light right-align width-100 delay-4" ng-click="nextInfo();" ><a class="btn-flat"   style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div>
+    <div>
+      <div class="row">
+        <div class="col s4"></div>
+        <div class="col s4"><img ng-src="{{user.avatar}}" alt="" src="../img/profile_img.png" class="circle responsive-img" id="thumbnailImage" ng-click="userPhoto();"> </div>
+        <div class="col s4"></div>
       </div>
-
-    </div>
-
-
-    <!-- Second info -->
-
-    <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="second-info">
-
-      <h4 class="center-align">Como deseas registrarte ?</h4>
-
-
-      <div class="col s12 ">
-       <div class="card-panel grey lighten-5 z-depth-1">
-         <div class="row valign-wrapper">
-           <div class="col s2 row">
-
-   <input class="with-gap" name="group3" type="radio" id="normal-user" ng-click="changeUserType('user');" checked />
-   <label for="normal-user">Usuario</label>
-
-
-             <img src="img/minimarket.png" alt="" class="responsive-img"> <!-- notice the "circle" class -->
-           </div>
-           <div class="col s10">
-             <span class="black-text">
-               Usuario base en donde declaras cuando quieres y un recolector se presentara en tu direccion.
-             </span>
-           </div>
-         </div>
-       </div>
-     </div>
-
-
-     <div class="col s12 ">
-       <div class="card-panel grey lighten-5 z-depth-1">
-         <div class="row valign-wrapper">
-           <div class="col s2">
-             <input class="with-gap" name="group3" type="radio" id="minimarket" ng-click="changeUserType('minimarket');" />
-             <label for="minimarket">Comercio</label>
-             <img src="img/minimarket.png" alt="" class="responsive-img"> <!-- notice the "circle" class -->
-           </div>
-           <div class="col s10">
-             <span class="black-text">
-               Minimarket o negocio declaras y se hara el retiro semanal segun sea las fechas que eliges.
-             </span>
-           </div>
-         </div>
-       </div>
-     </div>
-
-
-
-
-
-      <div class="waves-effect waves-light right-align width-100 delay-4"  ng-click="nextInfoAddress();"><a class="btn-flat " style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div>
-    </div>
-
-
-
-    <!--  thirdInfo  -->
-
-    <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="third-info-user">
-
-      <h6 class="center-align">Ingresa tu direcci&oacute;n</h6>
-
       <div class="input-field col s12" style="margin-top: 0px;" >
-        <input  id="address-name" type="text" class="validate" ng-model="user.address" disabled style="margin-bottom:10px;">
-        <label for="address-name">Nombre</label>
+        <input  id="email-input" type="text" class="validate" ng-model="user.email" style="margin-bottom:10px;">
+        <label for="email-input" id="email-label" class="">Email</label>
       </div>
-
       <div class="input-field col s12" style="margin-top: 0px;">
-        <input  id="street" type="text" class="validate" ng-model="user.street" style="margin-bottom:10px;">
-        <label for="street">Nombre</label>
+        <input  id="pass-name" type="password" class="validate" ng-model="user.password" style="margin-bottom:10px;">
+        <label for="pass-name" id="pass-label" class="">Contraseña</label>
       </div>
-
       <div class="input-field col s12" style="margin-top: 0px;">
-        <input  id="first_name" type="text" class="validate" style="margin-bottom:10px;">
-        <label for="first_name">Telefono</label>
+        <input  id="first-name" type="text" class="validate" ng-model="user.name" style="margin-bottom:10px;">
+        <label for="first-name" id="first-name-label" class="">Nombre</label>
       </div>
-      <div class="waves-effect waves-light right-align width-100 delay-4"  ng-click="nextInfoPersonal();"><a class="btn-flat " style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div>
+      <div class="input-field col s12" style="margin-top: 0px;">
+        <input  id="phone" type="text" class="validate" style="margin-bottom:10px;" ng-model="user.phone" placeholder="+56912345678">
+        <label for="phone" id="phone-label" class="active">Telefono</label>
+      </div>
     </div>
+    <a class="btn-floating right-align waves-effect waves-light yellow darken-1" ng-click="nextInfo();" style="position: absolute;right: 12vw;"> <i class="ion-ios-arrow-thin-right" aria-hidden="true"></i></a>
+  </div>
 
 
-    <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="third-info-commerce">
+  <!-- Second info -->
 
-      <h6 class="center-align">Ingresa tu direcci&oacute;n de comercio</h6>
+  <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="second-info">
+    <h4 class="center-align" style="font-weight:200">Como deseas registrarte ?</h4>
+    <div class="row" style="margin-bottom:0px;" ng-click="nextInfoAddress('user');">
+      <div class="col s12 m7">
+        <div class="card" style="padding:0px;">
+          <div class="card-image">
+            <img src="img/minimarket.png" alt="">
+            <span class="card-title">Persona</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row" style="margin-bottom:0px;" ng-click="nextInfoAddress('commerce');">
+      <div class="col s12 m7">
+        <div class="card" style="padding:0px;">
+          <div class="card-image">
+            <img src="img/minimarket.png" alt="">
+            <span class="card-title">Comercio</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <div class="input-field col s8" style="margin-top: 0px;" >
-        <input  id="address-name" type="text" class="validate" ng-model="user.address" disabled style="margin-bottom:10px;">
-        <label for="address-name">Buscar direccion</label>
+
+
+  <!--  thirdInfo  -->
+
+  <div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="third-info-user">
+    <!-- <h6 class="center-align">Ingresa tu direcci&oacute;n</h6> -->
+    <!-- <div id="map" style="height:25vh;"></div> -->
+  </br>
+  <div class="row" style="margin-bottom:0px;">
+    <div class="col s12" style="padding:5px">
+      <div class="input-field col s12" style="margin-top: 0px;padding-left:0px;">
+        <input  id="address-name" type="text" class="validate" ng-model="address.name" style="margin-bottom:10px;font-size: smaller;">
+        <label for="address-name" id="address-name
+        -label">Nombre de direccion</label>
+      </div>
+    </div>
+  </div>
+
+  <div class="row" style="margin-bottom:0px;">
+    <div class="col s12" style="padding:5px">
+      <div class="input-field col s8" style="margin-top: 0px;padding-left:0px;">
+        <input  id="address-street" type="text" class="validate" ng-model="address.street" style="margin-bottom:10px;font-size: smaller;">
+        <label for="address-street" id="address-street-label">Direccion</label>
       </div>
 
-
-
-      <div id="map" style="height:20vh;"></div>
-
-
-
-      <div class="waves-effect waves-light right-align width-100 delay-4"  ng-click="nextInfoPersonal();"><a class="btn-flat " style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div>
+      <div class="input-field col s4" style="margin-top: 0px;padding-right:0px;">
+        <input  id="address-number" type="text" class="validate" ng-model="address.number" style="margin-bottom:10px;font-size: smaller;">
+        <label for="address-number" id="address-number-label">Numero</label>
+      </div>
     </div>
+  </div>
+
+  <select class="browser-default" ng-model="address.region" ng-change="loadCommunes(address.region)">
+      <option value="" disabled selected>Seleccione una Región</option>
+      <option ng-repeat="region in regions" ng-show="region.habilitado == 1" value="{{region.REGION_ID}}">{{region.REGION_NOMBRE}}</option>
+    </select>
+</br>
+    <select class="browser-default" ng-model="address.commune">
+        <option value="" disabled selected>Seleccione una Comuna</option>
+        <option ng-repeat="commune in communes" ng-show="commune.habilitado == 1 " value="{{commune.COMUNA_ID}}">{{commune.COMUNA_NOMBRE}}</option>
+      </select>
+
+  <div class="row" style="margin-bottom:0px;">
+    <div class="col s12" style="padding:5px">
+      <div class="input-field col s6" style="margin-top: 0px;">
+        <input  id="block" type="text" class="validate" style="margin-bottom:10px;" ng-model="address.block">
+        <label for="block">block</label>
+      </div>
+      <div class="input-field col s6" style="margin-top: 0px;">
+        <input  id="depto" type="text" class="validate" style="margin-bottom:10px;" ng-model="address.numberDepto">
+        <label for="depto">Nº depto</label>
+      </div>
+    </div>
+  </div>
+  <!-- <a class="btn-floating right-align waves-effect waves-light red" ng-click="nextInfo();" style="position: absolute;"> <i class="fa fa-location-arrow" aria-hidden="true"></i></a> -->
+  <a class="btn-floating right-align waves-effect waves-light yellow darken-1" ng-click="finishUser(user,address);" style="position: absolute;right: 12vw;"> <i class="ion-ios-checkmark-empty" aria-hidden="true"></i></a>
+</div>
 
 
 
 
 
-    <!-- <div class="">
-    <img src="img/bottom_cool.png" alt="" style="position:absolute;bottom:-40px;width:100vw;" />
-  </div> -->
 
-  <style >
+<!-- fourth info -->
 
-  .row{
-    padding:0px;
-  }
-  .s4{
-    padding:0px;
-  }
-  .btn-flat:hover {
-    background-color: rgba(0, 0, 0, 0);
-    box-shadow: none;
-  }
-  </style>
+<div class="signup-form animated hide delay-2 z-depth-1" style="margin-right:20px;margin-left:20px;margin-top: 0px;" id="fourth-info-commerce">
+  <h4 class="center-align">Informaci&oacute;n de comercio</h4>
+  <div class="input-field col s8" style="margin-top: 0px;" >
+    <input type="text" class="validate" ng-model="user.commerce_name"  style="margin-bottom:10px;" placeholder="Nombre comercio">
+  </div>
+  <div class="input-field col s8" style="margin-top: 0px;" >
+    <input type="text" class="validate" ng-model="user.commerce_dni"  style="margin-bottom:10px;" placeholder="Rut de tu comercio">
+  </div>
+  <div class="input-field col s8" style="margin-top: 0px;" >
+    <input type="text" class="validate" ng-model="user.commerce_description"  style="margin-bottom:10px;" placeholder="Descripcion de tu comercio">
+  </div>
+  <div class="waves-effect waves-light width-100 delay-4 z-depth-1" style="background-color:#2ca8ad;font-weight:500;margin-bottom:20px;" ng-click="commercePhoto()" ><a class="btn-flat " style="color:white;width:100%;"> foto comercio</a></div>
+
+  <!-- <a class="waves-effect waves-light btn" style="background-color:#2ca8ad;font-weight:500;margin-bottom:20px;">button</a> -->
+
+  <!-- <div class="waves-effect waves-light right-align width-100 delay-4"  ng-click="nextInfoPersonal();"><a class="btn-flat " style="color:#2ca8ad;width:100%;">Siguiente <i class="ion-arrow-right-c"></i></a></div> -->
+  <a class="btn-floating right-align waves-effect waves-light yellow darken-1" ng-click="nextInfoCommerce(user,address);" style="position: absolute;right: 12vw;"> <i class="ion-ios-checkmark-empty" aria-hidden="true"></i></a>
+</div>
+
+
+<style >
+
+.row{
+  padding:0px;
+}
+.s4{
+  padding:0px;
+}
+.btn-flat:hover {
+  background-color: rgba(0, 0, 0, 0);
+  box-shadow: none;
+}
+
+.modal{
+  min-height: auto;
+  width: auto;
+  z-index:100;
+  margin: 20px;
+  margin-top: 10vh;
+}
+
+.modal-footer {
+  background-color: #ffffff !important;
+}
+
+.lean-overlay {
+  position: fixed;
+  z-index: 999;
+  top: -100px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 125%;
+  width: 100%;
+  background: #000;
+  display: none;
+  will-change: opacity;
+}
+
+.loading-container.active {
+  opacity: 1;
+  background-color: rgba(0, 0, 0, 0.40);
+}
+
+input[type=text], input[type=password], input[type=email], input[type=url], input[type=time], input[type=date], input[type=datetime-local], input[type=tel], input[type=number], input[type=search], textarea.materialize-textarea {
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #9e9e9e !important;
+  border-radius: 0;
+  outline: none;
+  height: 3rem;
+  width: 100%;
+  margin: 0 0 15px 0;
+  padding: 0;
+  box-shadow: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  transition: all .3s;
+}
+</style>
 
 </ion-content>
 </ion-view>

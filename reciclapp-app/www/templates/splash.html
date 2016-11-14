@@ -1,127 +1,132 @@
 <ion-view view-title="" hide-nav-bar="true" ng-init="init();">
   <ion-content scroll="false" class="background-login login-screen">
     <div class="" style="margin:40px;">
-      <div class="" style="margin-top:100px">
-        <h1 class="text-center logotxtReciclapp" style="margin-bottom: 120px;">
+      <div class="" style="margin-top:50px">
+        <h1 class="text-center logotxtReciclapp" style="margin-bottom: 15vh;">
           RECICL<strong style="font-weight:800; font-family:DINPro-Bold">APP</strong>
         </h1>
       </div>
 
-      <div class="swiper-container slider-sliced">
+      <!-- <div class="swiper-container slider-sliced">
 
-    <div class="swiper-wrapper">
+        <div class="swiper-wrapper">
 
-      <div class="swiper-slide">
+          <div class="swiper-slide">
 
-        <ion-slide-box>
-
-
-          <ion-slide>
-            <div class="" style="margin-left:20px;margin-right:20px;margin-top:20px;">
+            <ion-slide-box>
 
 
-            <div class = "box box1" style="color:white;">
-              <div class="input-group">
-  <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" ng-model="user.email" aria-describedby="basic-addon1">
-</div>
-<div class="input-group" style="margin-top:5px;">
-  <span class="input-group-addon" id="basic-addon1">@</span>
-  <input type="text" class="form-control" placeholder="Username" ng-model="user.password" aria-describedby="basic-addon1">
-</div>
-</div>
-
-            </div>
-          </ion-slide>
-
-          <ion-slide>
-            <div class = "box box2" style="color:white;">
-              <h2 class="" style="color:white;">Otro Slider</h2>
-
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
-            </div>
-          </ion-slide>
-
-          <ion-slide>
-            <div class = "box box3" style="color:white;">
-              <h2 class="" style="color:white;">Slider</h2>
-              <img src="" >
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
-            </div>
-          </ion-slide>
+              <ion-slide>
+                <div class="" style="margin-left:20px;margin-right:20px;margin-top:20px;">
 
 
-
-        </ion-slide-box>
-        <!-- <div class="slider-bottom-right valign-wrapper">
-          <div class="valign center-align width-100 p-b-5em">
+                  <div class = "box box1" style="color:white;">
+                    <div class="input-group">
+                      <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                      </span>
+                      <input type="text" class="form-control" placeholder="Correo" ng-model="user.email" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group" style="margin-top:5px;">
+                      <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
+                      </span>
+                      <input type="password" class="form-control" placeholder="Contraseña" ng-model="user.password" aria-describedby="basic-addon1">
+                    </div>
+                  </div>
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class = "box box2" style="color:white;">
+                  <h2 class="" style="color:white;">Otro Slider</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                </div>
+              </ion-slide>
+              <ion-slide>
+                <div class = "box box3" style="color:white;">
+                  <h2 class="" style="color:white;">Slider</h2>
+                  <img src="" >
+                  <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat</p>
+                </div>
+              </ion-slide>
+            </ion-slide-box>
           </div>
+        </div>
+      </div> -->
 
-        </div> -->
+      <div class = "box box1" style="color:white;">
+        <div class="input-group">
+          <span class="input-group-addon" id="basic-addon1"><i class="fa fa-envelope-o" aria-hidden="true"></i>
+          </span>
+          <input type="text" class="form-control" placeholder="Correo" ng-model="user.email" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group" style="margin-top:5px;">
+          <span class="input-group-addon" id="basic-addon1"><i class="fa fa-unlock-alt" aria-hidden="true"></i>
+          </span>
+          <input type="password" class="form-control" placeholder="Contraseña" ng-model="user.password" aria-describedby="basic-addon1">
+        </div>
       </div>
-    </div>
-  </div>
 
-  <a class="waves-effect waves-light btn btn-large" style="width:100%;background-color:#3b5998" ng-click="loginWithFacebook();">Entrar con facebook</a>
+      <a class="waves-effect waves-light btn" style="width:100%;background-color: darkcyan;" ng-click="login(user);">Iniciar sesion</a>
+    </br>
+  </br>
+  <a class="waves-effect waves-light btn" style="width:100%;background-color:#3b5998" ng-click="loginWithFacebook();">Entrar con facebook</a>
 </br>
 </br>
-  <a class="waves-effect waves-light btn btn-large" style="width:100%;background-color: darkcyan;" ng-click="login();">Iniciar sesion</a>
 
-  <div class="" style="margin-top:20px;" ng-click="register()">
-        <span style="color:white;" class="center-align">Aun no tienes una cuenta ? <a href="#" style="color:" >Registrate</a></span>
-      </div>
-
-  </div>
+<a  class="waves-effect waves-light btn" style="width:100%;color:white" ng-click="register();">Registrarme</a>
 
 
-    <style>
+
+</div>
+
+
+<style>
 
 .box1, box2, box3 {
-height: 150px;
+  height: 150px;
 
 }
 
 i {
-font-size: 8px;
-color: inherit;
+  font-size: 8px;
+  color: inherit;
 }
 
 .slider
 {
-margin-top: 25vh;
-height:230px;
+  margin-top: 25vh;
+  height:230px;
 }
 .slider-sliced .slider-bottom-right {
-height: 60px;
+  height: 60px;
 }
 
 .steps-controllers > div {
 
-border-right: 0px solid #ddd;
+  border-right: 0px solid #ddd;
 
 }
 .steps-controllers {
-border-top: 0px solid #ddd;
+  border-top: 0px solid #ddd;
 }
 
 h2
 {
-font-size:36px;
-font-weight:100;
+  font-size:36px;
+  font-weight:100;
 }
 
 
 .swiper-container {
 
-height: 150px !important;
-position:static;
-background-color: transparent;
+  height: 150px !important;
+  position:static;
+  background-color: transparent;
 }
 
 .slider-slide {
-background-color: transparent;
-height:200px !important;
-padding-top:40px;
+  background-color: transparent;
+  height:200px !important;
+  padding-top:40px;
 
 }
 
@@ -130,52 +135,52 @@ padding-top:40px;
 }
 
 .input-group {
-    position: relative;
-    width: 100%;
-    display: table;
-    border-collapse: separate;
+  position: relative;
+  width: 100%;
+  display: table;
+  border-collapse: separate;
 }
 
 .input-group-addon:not(:last-child) {
-    border-right: 0;
+  border-right: 0;
 }
 
 .input-group .form-control:not(:last-child), .input-group-addon:not(:last-child), .input-group-btn:not(:first-child)>.btn-group:not(:last-child)>.btn, .input-group-btn:not(:first-child)>.btn:not(:last-child):not(.dropdown-toggle), .input-group-btn:not(:last-child)>.btn, .input-group-btn:not(:last-child)>.btn-group>.btn, .input-group-btn:not(:last-child)>.dropdown-toggle {
-    border-bottom-right-radius: 0;
-    border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
 }
 .input-group-addon {
-    padding: .5rem .75rem;
-    margin-bottom: 0;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 1.25;
-    color: #55595c;
-    text-align: center;
-    background-color: white;
-    border: 0px solid rgba(0,0,0,.15);
-    border-radius: .25rem;
+  padding: .5rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.25;
+  color: #55595c;
+  text-align: center;
+  background-color: white;
+  border: 0px solid rgba(0,0,0,.15);
+  border-radius: .25rem;
 }
 .input-group-addon, .input-group-btn {
-    width: 1%;
-    white-space: nowrap;
-    vertical-align: middle;
+  width: 1%;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 .input-group .form-control, .input-group-addon, .input-group-btn {
-    display: table-cell;
+  display: table-cell;
 }
 .input-group .form-control {
-    position: relative;
-    z-index: 2;
-    float: left;
-    width: 100%;
-    margin-bottom: 0;
+  position: relative;
+  z-index: 2;
+  float: left;
+  width: 100%;
+  margin-bottom: 0;
 }
-input[type=text] {
+input[type=text],input[type=password] {
   background-color: white;
 
-    border-bottom: 0px solid #9e9e9e;
+  border-bottom: 0px solid #9e9e9e;
 }
 </style>
-  </ion-content>
+</ion-content>
 </ion-view>

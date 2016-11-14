@@ -5,13 +5,13 @@
 
 /* welcome page */
 /*@media only screen and (orientation: landscape) {
-  .container-welcome .btnComenzar{
-    margin-top: 0;
-    position: absolute;
-    bottom: 15vh;
-    left: 50%; -webkit-transform: translate(-50%); transform: translate(-50%);
-     }
-     }*/
+	.container-welcome .btnComenzar{
+		margin-top: 0;
+		position: absolute;
+		bottom: 15vh;
+		left: 50%; -webkit-transform: translate(-50%); transform: translate(-50%);
+		 }
+		 }*/
 .container-welcome {text-align: justify; width: 90%; margin: 0 auto;}
 .slider {height: 100%;}
 .slider-slide {padding-top: 80px;color: #000;background-color: #fff;text-align: center;font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300;}
@@ -22,55 +22,55 @@
 .button.ng-hide{display:none;}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 input.rounded {
-  width:60px;
-  text-align: center;
-  border: 1px solid #ccc;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 15px 15px 15px 15px;
-  -moz-box-shadow: 2px 2px 3px #666;
-  -webkit-box-shadow: 2px 2px 3px #666;
-  box-shadow: 2px 2px 3px #666;
-  font-size: 20px;
-  padding: 4px 7px;
-  outline: 0;
-  -webkit-appearance: none;
+	width:60px;
+	text-align: center;
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 15px 15px 15px 15px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size: 20px;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
 }
 
 input.rounded:focus {
-  border-color: #339933;
+	border-color: #339933;
 
 }
 
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-outer-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
+	-webkit-appearance: none;
+	margin: 0;
 }
 
 input.rounded {
-  width:60px;
-  text-align: center;
-  border: 1px solid #ccc;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 15px 15px 15px 15px;
-  -moz-box-shadow: 2px 2px 3px #666;
-  -webkit-box-shadow: 2px 2px 3px #666;
-  box-shadow: 2px 2px 3px #666;
-  font-size: 20px;
-  padding: 4px 7px;
-  outline: 0;
-  -webkit-appearance: none;
+	width:60px;
+	text-align: center;
+	border: 1px solid #ccc;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 15px 15px 15px 15px;
+	-moz-box-shadow: 2px 2px 3px #666;
+	-webkit-box-shadow: 2px 2px 3px #666;
+	box-shadow: 2px 2px 3px #666;
+	font-size: 20px;
+	padding: 4px 7px;
+	outline: 0;
+	-webkit-appearance: none;
 }
 
 input.rounded:focus {
-  border-color: #339933;
+	border-color: #339933;
 
 }
 
@@ -78,10 +78,10 @@ input.rounded:focus {
 .button-facebook, .button-facebook:hover{background-color: #374e8e; color:#fff;}
 .background-login.scroll-content{
  background: url(../img/fdo_login.png?v1) no-repeat center center fixed;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
 }
 /* home page */
 .action-icon{font-size: 28px;}
@@ -114,60 +114,60 @@ src: url("../fonts/Tipografia Reciclapp/DINPro-Light.woff")format('woff');
 }
 
 .topBar {
-    font-family: "DINPro-Bold";
-    background-color: #128da4;
-    color:#fff;
-    height: 60px;
-    text-align: center;
+		font-family: "DINPro-Bold";
+		background-color: #128da4;
+		color:#fff;
+		height: 60px;
+		text-align: center;
 }
 
 .button-clear.button-clear {
-    color:#fff !important;
+		color:#fff !important;
 }
 
 .title.title-left.header-item {
-    line-height: 60px;
-    text-align: center;
-    margin-left: -45px;
+		line-height: 60px;
+		text-align: center;
+		margin-left: -45px;
 }
 
 .txtReciclappBoldM{
-    font-family: "DINPro-Bold";
-    font-size: medium;
-    width: 85%;
-    text-align: center;
-    margin: 0px auto 30px;
+		font-family: "DINPro-Bold";
+		font-size: medium;
+		width: 85%;
+		text-align: center;
+		margin: 0px auto 30px;
 
 }
 
 .logotxtReciclapp{
-    font-family: "DINPro-light";
-    color:#fff;
-    font-size: 40px;
+		font-family: "DINPro-light";
+		color:#fff;
+		font-size: 40px;
 }
 .txtBienvenida{
 	margin-top: 50px;
 }
 .btnComenzar{
-    border-radius: 10px;
-    min-width: 200px;
-    min-height: 40px;
-    background-color: #fff;
-    margin-top: 10%;
-    border:0px;
-    box-shadow: 0px 6px 0px #b3b3b3;
-    color: #4d4d4d;
-    font-size: large;
+		border-radius: 10px;
+		min-width: 200px;
+		min-height: 40px;
+		background-color: #fff;
+		margin-top: 10%;
+		border:0px;
+		box-shadow: 0px 6px 0px #b3b3b3;
+		color: #4d4d4d;
+		font-size: large;
 }
 .barraCategorias{
-    background-color: #5c2b7f;
-    border-radius: 10px;
-    color: #fff;
-    margin-top:10px;
-    min-height: 50px;
-    font-family: "DINPro-light";
-    padding-right: 10px;
-    padding-left: 10px;
+		background-color: #5c2b7f;
+		border-radius: 10px;
+		color: #fff;
+		margin-top:10px;
+		min-height: 50px;
+		font-family: "DINPro-light";
+		padding-right: 10px;
+		padding-left: 10px;
 }
 
 .history {
@@ -175,98 +175,98 @@ src: url("../fonts/Tipografia Reciclapp/DINPro-Light.woff")format('woff');
 }
 
 .history .barraCategorias {
-    background-color: #5c2b7f;
-    border-radius: 0px;
-    color: #fff;
-    margin-top:10px;
-    min-height: 50px;
-    font-family: "DINPro-light";
-    padding-right: 10px;
-    padding-left: 10px;
+		background-color: #5c2b7f;
+		border-radius: 0px;
+		color: #fff;
+		margin-top:10px;
+		min-height: 50px;
+		font-family: "DINPro-light";
+		padding-right: 10px;
+		padding-left: 10px;
 }
 
 
 .history .barraCategorias td {
-    font-family: "DINPro-light";
-    font-weight: bold;
+		font-family: "DINPro-light";
+		font-weight: bold;
 }
 
 .history .barraCategorias td.bolder {
-    font-weight: bold;
+		font-weight: bold;
 }
 
 .barraCategorias .categoryName {
-    font-weight: bold;
-    font-size: 20px;
-    color:#fff;
+		font-weight: bold;
+		font-size: 20px;
+		color:#fff;
 }
 
 .barraCategorias .categoryImage{
-    padding: 5px;
+		padding: 5px;
 }
 
 .barraCategorias .categoryImage img{
-    height: 40px;
+		height: 40px;
 }
 
 .barraCategorias td {
-    vertical-align: middle;
+		vertical-align: middle;
 }
 
 .categoryTips{
-    padding-left: 10%;
-    padding-right: 10%;
-    margin-top: 5px;
+		padding-left: 10%;
+		padding-right: 10%;
+		margin-top: 5px;
 }
 
 .categoryTips .categoryTipsContent{
-    text-align: justify;
+		text-align: justify;
 }
 
 .categoryTips h3 {
-    color:#128da4;
+		color:#128da4;
 }
 
 .categoryTips strong {
-    color: #128da4;
-    text-align: center
+		color: #128da4;
+		text-align: center
 }
 
 .btnAzulR, .btnAzulR:hover{
-    background-color: #128da4;
-    color: #fff;
-    box-shadow: 0px 6px 0px #6d6d6d;
-    margin-top:50px;
-    margin-bottom: 40px;
-    border-radius: 10px;
-    width: 40%;
-    font-weight: 500;
+		background-color: #128da4;
+		color: #fff;
+		box-shadow: 0px 6px 0px #6d6d6d;
+		margin-top:50px;
+		margin-bottom: 40px;
+		border-radius: 10px;
+		width: 40%;
+		font-weight: 500;
 }
 
 .btnAzulR2, .btnAzulR2:hover{
-    background-color: #128da4;
-    color: #fff;
-    box-shadow: 0px 6px 0px #6d6d6d;
-    border-radius: 10px;
-    font-weight: 500;
+		background-color: #128da4;
+		color: #fff;
+		box-shadow: 0px 6px 0px #6d6d6d;
+		border-radius: 10px;
+		font-weight: 500;
 }
 
 .btnMoradoR, .btnMoradoR:hover{
-    background-color: #481a6b;
-    color: #fff;
-    box-shadow: 0px 6px 0px #6d6d6d;
-    border-radius: 10px;
-    font-weight: 500;
+		background-color: #481a6b;
+		color: #fff;
+		box-shadow: 0px 6px 0px #6d6d6d;
+		border-radius: 10px;
+		font-weight: 500;
 }
 
 .txtMorado{
-    color:#5c2b7f;
+		color:#5c2b7f;
 }
 .txtAzul{
-    color:#128da4;
+		color:#128da4;
 }
 .txtGris{
-    color:#535353;
+		color:#535353;
 }
 
 
@@ -277,41 +277,41 @@ src: url("../fonts/Tipografia Reciclapp/DINPro-Light.woff")format('woff');
 .modal-backdrop{background-color: transparent;}
 .modal{display: block}
 .platform-android .modal .bar .title{
-    text-align: center !important;
-    line-height: 60px;
-    margin-right: -45px;
+		text-align: center !important;
+		line-height: 60px;
+		margin-right: -45px;
 }
 .summary-legend{
-    width: 60%;
-    margin: 20px auto;
-    font-weight: bold;
-    font-size: 16px;
-    font-family: "DINPro-light";
+		width: 60%;
+		margin: 20px auto;
+		font-weight: bold;
+		font-size: 16px;
+		font-family: "DINPro-light";
 }
 
 .summary-container{
-    margin-top: 40px;
-    font-weight: bold;
-    font-size: 22px;
-    font-family: "DINPro-light";
+		margin-top: 40px;
+		font-weight: bold;
+		font-size: 22px;
+		font-family: "DINPro-light";
 }
 
 .bar-header-profile.bar-header {
-    height: 200px;
+		height: 200px;
 }
 
 .bar-header-profile-content{
-    margin-top: 200px;
-    text-align: center;
-    font-family: "DINPro-light";
-    font-weight: bold;
-    color:#535353;
-    font-size: 18px;
+		margin-top: 200px;
+		text-align: center;
+		font-family: "DINPro-light";
+		font-weight: bold;
+		color:#535353;
+		font-size: 18px;
 }
 
 .menu-profile {
-    margin-top: 45px;
-    margin-left: 10px;
+		margin-top: 45px;
+		margin-left: 10px;
 }
 
 .menu-profile .image{
@@ -319,23 +319,40 @@ src: url("../fonts/Tipografia Reciclapp/DINPro-Light.woff")format('woff');
 }
 
 .menu-profile .name{
-    padding-top: 30px;
-    margin-left: 20px;
-    font-size: 16px;
-    word-break: break-word;
-    overflow-x: hidden;
-    max-width: 125px;
-    text-align: left;
+		padding-top: 30px;
+		margin-left: 20px;
+		font-size: 16px;
+		word-break: break-word;
+		overflow-x: hidden;
+		max-width: 125px;
+		text-align: left;
 }
 
 .menu-profile img{
-    height: 100px;
+		height: 100px;
 }
 
 
 
 
 .toggle.toggle-reciclapp input:checked + .track {
-    border-color: #128da4;
-    background-color: #128da4;
+		border-color: #128da4;
+		background-color: #128da4;
+}
+
+.input-field label.active {
+		font-size: 0.6rem;
+}
+.input-field label {
+		color: #9e9e9e;
+		position: absolute;
+		top: 0.8rem;
+		left: 0.75rem;
+		font-size: 0.78rem;
+		cursor: text;
+		-webkit-transition: .2s ease-out;
+		-moz-transition: .2s ease-out;
+		-o-transition: .2s ease-out;
+		-ms-transition: .2s ease-out;
+		transition: .2s ease-out;
 }

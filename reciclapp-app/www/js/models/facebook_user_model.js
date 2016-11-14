@@ -1,18 +1,5 @@
 'use strict';
 
-/**
-* @name: Customer
-* @description: contains a set of customer
-* @attributes:
-*
-* | Name              | Type           |
-* |-------------------|----------------|
-* | @id               | int            |
-* | @firstName        | string         |
-* | @lastName         | string         |
-*
-*/
-
 (function() {
 	this.app.factory('UserFacebookModel', ['$http', '$q', 'ENV','$state',
 	function($http, $q, ENV,$state){
@@ -32,7 +19,8 @@
 						id: facebookObject.data.id,
 						name: facebookObject.data.name,
 						gender: facebookObject.data.gender,
-						email: facebookObject.data.email
+						email: facebookObject.data.email,
+						provider: 'facebook'
 					};
 					defer.resolve(currentUser);
 				}, function(error) {

@@ -1,6 +1,6 @@
 <ion-side-menus enable-menu-with-back-views="true">
   <ion-side-menu-content>
-    <ion-nav-bar class="bar-stable primary-color" class="bar-stable" style="background-color:#009688 !important" >
+    <ion-nav-bar class="bar-stable primary-color"  >
 
 
       <ion-nav-buttons side="left">
@@ -8,10 +8,22 @@
         </button>
       </ion-nav-buttons>
 
-    </ion-nav-bar>
+      <ion-nav-buttons side="right">
+        <div class="row hide" id="right-button">
+          <div class="input-field col s6 hide" style="margin:0px;" id="search-input">
+            <input  id="search-input-text" type="text" class="validate" style="color:white;">
+            <label for="search-input-text" style="color:white">Buscar</label>
+          </div>
+          <div class="" id="search-bar">
+            <input type="button" name="name" value="">
+            <button class="button button-icon button-clear ion-ios-search" id="searchButton"  menu-toggle="right">
+            </button>
+          </div>
+        </div>
+        </ion-nav-buttons>
 
+    </ion-nav-bar>
     <ion-nav-view name="menuContent">
-      <!--  ALL VIEWS OF CUSTOMERS DISPLAYED HERE!!! -->
     </ion-nav-view>
   </ion-side-menu-content>
 
@@ -19,54 +31,83 @@
     <ion-content>
 
       <ion-list>
-        <ion-item nav-clear menu-close class="sidenav-header primary-color" style="border:0">
-          <div>
-            <div class="nav-avatar" ng-click="miProfile();">
-              <img class="circle avatar" ng-src="{{currentUser.avatar}}</" alt="">
-              <div class="avatar-body">
-                <h3>{{currentUser.firstName}}</h3>
 
-              </div>
-            </div>
+<ion-item nav-clear menu-close ui-sref="user.dashboard" class="waves-effect waves-light " style="font-weight:200;border-top-width:0px;">
+  <span class="ion-ios-close-empty" style="font-size:30px;color:grey;"></span>
 
-          </div>
-        </ion-item>
+</ion-item>
+<ion-item nav-clear menu-close ui-sref="user.dashboard" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-recycle" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; Declarar reciclaje
+</ion-item>
 
-        <ion-item nav-clear menu-close ui-sref="user.dashboard">
-          <i class="fa fa-recycle" aria-hidden="true"></i>&nbsp;&nbsp; Declarar reciclaje
-        </ion-item>
-        <ion-item nav-clear menu-close ui-sref="user.friendlyCommerce">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>&nbsp;&nbsp; Comercios amigables
-        </ion-item>
-        <ion-item nav-clear menu-close ui-sref="user.events">
-          <i class="fa fa-calendar" aria-hidden="true"></i>&nbsp;&nbsp; Eventos
-        </ion-item>
-
-        <ion-item nav-clear menu-close ui-sref="employees.profile">
-          <i class="fa fa-user" aria-hidden="true"></i>&nbsp;&nbsp; Mi Perfil
-        </ion-item>
-
-        <ion-item nav-clear  menu-close ui-sref="terms">
-          <i class="fa fa-gavel" aria-hidden="true"></i>&nbsp;&nbsp; T&eacute;rminos y Condiciones
-        </ion-item>
-
-        <ion-item nav-clear menu-close href="#" ng-click="logOutEmployee()">
-          <i class="fa fa-sign-out" aria-hidden="true"></i>&nbsp;&nbsp; Salir
-        </ion-item>
-      </ion-list>
+<ion-item nav-clear menu-close ui-sref="user.gifts" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-recycle" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; Premios
+</ion-item>
 
 
+<ion-item nav-clear menu-close ui-sref="user.friendlyCommerce" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-map-marker" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; Comercios amigables
+</ion-item>
+<ion-item nav-clear menu-close ui-sref="user.events" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; Eventos
+</ion-item>
+
+<ion-item nav-clear menu-close ui-sref="user.events" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-calendar" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; Concursos
+</ion-item>
+
+<ion-item nav-clear menu-close ui-sref="user.profile" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-user" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; Mi Perfil
+</ion-item>
+
+<ion-item nav-clear  menu-close ui-sref="terms" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-gavel" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; T&eacute;rminos y Condiciones
+</ion-item>
+
+<ion-item nav-clear menu-close href="#" ng-click="logout()" style="font-weight:200;border-top-width:0px;">
+  <!-- <i class="fa fa-sign-out" aria-hidden="true"></i> -->
+  &nbsp;&nbsp; Salir
+</ion-item>
+</ion-list>
 
 
-    </ion-content>
-  </ion-side-menu>
+
+
+</ion-content>
+</ion-side-menu>
 </ion-side-menus>
-
+s
 
 <style>
 .bar-stable .button.button-clear {
 
-    color: #ffffff;
+  color: #ffffff;
 
 }
+
+
+input[type=text]:focus:not([readonly]),
+input[type=password]:focus:not([readonly]),
+input[type=email]:focus:not([readonly]),
+input[type=url]:focus:not([readonly]),
+input[type=time]:focus:not([readonly]),
+input[type=date]:focus:not([readonly]),
+input[type=datetime-local]:focus:not([readonly]),
+input[type=tel]:focus:not([readonly]),
+input[type=number]:focus:not([readonly]),
+input[type=search]:focus:not([readonly]),
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid white;
+  box-shadow: 0 1px 0 0 white;
+}
+
+
+
 </style>
