@@ -29,13 +29,13 @@
 				});
 				return defer.promise;
       },
-			getDeclarationHistory: function(email) {
+			getDeclarationHistory: function(user) {
 				var defer = $q.defer();
 				$http({
-					url: ENV.LOCAL + 'obtener_historialdec.php',
+					url: ENV.LOCALNEW + 'obtener_declaraciones.php',
 					method: 'GET',
 					params:{
-						idUsu : email
+						idUsu : user.id_usuario
 					}
 				}).then(function(response) {
 					defer.resolve(response);

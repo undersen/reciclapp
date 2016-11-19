@@ -1,0 +1,158 @@
+<ion-view ng-init="init()">
+<ion-content>
+
+
+
+  <div class="" style="height:30vh;width100%;position:relative;top:-44px;">
+    <!-- <img src="../../img/premio.jpg" alt="" />
+    <h1>Premios</h1> -->
+
+    <div class="card" style="margin:0px;padding:0px;">
+      <!-- <div class="card-image">
+      <img src="../../img/premio.jpg">
+      <span class="card-title">Plato de comida</span>
+    </div> -->
+
+    <div class="card-image" style="height:150px !important;">
+      <div id="map" style="height:150px;">
+
+      </div>
+      <a class="btn-floating  waves-effect waves-light tail" ng-click="getMyPosition();" style="position: absolute;right: 1px;margin: 20px;bottom: 20px;">
+        <i class="fa fa-location-arrow" style="font-size:15px;" aria-hidden="true"></i>
+      </a>
+      <div class="container">
+        <div class="row" style="position:relative;bottom:100px;padding-right:15vw;">
+          <div class="input-field col s12">
+            <input id="name-address" type="text" class="validate">
+            <label id="specialLabel" for="name-address">Nombre Direccion</label>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div style="bottom: 25px;position: relative;" class="container">
+  <div class="row" style="margin-bottom:0px;">
+    <div class="col s12" style="padding:5px">
+      <div class="input-field col s8" style="margin-top: 0px;padding-left:0px;">
+        <input  id="address-street" type="text" class="validate" ng-model="address.street" style="margin-bottom:10px;font-size: smaller;">
+        <label for="address-street" id="address-street-label">Direccion</label>
+      </div>
+
+      <div class="input-field col s4" style="margin-top: 0px;padding-right:0px;">
+        <input  id="address-number" type="text" class="validate" ng-model="address.number" style="margin-bottom:10px;font-size: smaller;">
+        <label for="address-number" id="address-number-label">Numero</label>
+      </div>
+    </div>
+  </div>
+
+  <select class="browser-default" ng-model="address.region" ng-change="loadCommunes(address.region)">
+      <option value="" disabled selected>Seleccione una Región</option>
+      <option ng-repeat="region in regions" ng-show="region.habilitado == 1" value="{{region.REGION_ID}}">{{region.REGION_NOMBRE}}</option>
+    </select>
+</br>
+    <select class="browser-default" ng-model="address.commune">
+        <option value="" disabled selected>Seleccione una Comuna</option>
+        <option ng-repeat="commune in communes" ng-show="commune.habilitado == 1 " value="{{commune.COMUNA_ID}}">{{commune.COMUNA_NOMBRE}}</option>
+      </select>
+
+  <div class="row" style="margin-bottom:0px;">
+    <div class="col s12" style="padding:5px">
+      <div class="input-field col s6" style="margin-top: 0px;">
+        <input  id="block" type="text" class="validate" style="margin-bottom:10px;" ng-model="address.block">
+        <label for="block">block</label>
+      </div>
+      <div class="input-field col s6" style="margin-top: 0px;">
+        <input  id="depto" type="text" class="validate" style="margin-bottom:10px;" ng-model="address.numberDepto">
+        <label for="depto">Nº depto</label>
+      </div>
+    </div>
+  </div>
+
+  <p>
+     <input type="checkbox" id="default-address" ng-click="defaultAddress();" />
+     <label for="default-address" style="font-size:14px;">Direccion Predeterminada</label>
+   </p>
+  </div>
+
+  <a class="waves-effect waves-light btn" style="width:100%" ng-click="addAddress(address)"><span class="animate">Validar direccion</span></a>
+
+
+
+  <style>
+  .scroll-content {
+    overflow: visible !important;
+  }
+  .bar.bar-header {
+    background: rgba(255,255,255,.10);
+    border-bottom-width: 0;
+  }
+  .platform-ios.platform-cordova:not(.fullscreen) .has-header {
+    top:0px;
+  }
+  .primary-color {
+    background-color: transparent !important;
+  }
+
+  p{
+    font-weight: 400 !important;
+  }
+
+  .back-button{
+    width: 10px;
+    height: 10px;
+    display: block !important;
+  }
+
+  #specialLabel {
+    color: #009688;
+    position: absolute;
+    top: 0.8rem;
+    left: 0.75rem;
+    font-size: 1.25rem;
+    cursor: text;
+    -webkit-transition: .2s ease-out;
+    -moz-transition: .2s ease-out;
+    -o-transition: .2s ease-out;
+    -ms-transition: .2s ease-out;
+    transition: .2s ease-out;
+  }
+
+
+  .bar-stable .button.button-clear {
+    color: #ffffff;
+  }
+
+
+  input[type=text]:focus:not([readonly]),
+  input[type=password]:focus:not([readonly]),
+  input[type=email]:focus:not([readonly]),
+  input[type=url]:focus:not([readonly]),
+  input[type=time]:focus:not([readonly]),
+  input[type=date]:focus:not([readonly]),
+  input[type=datetime-local]:focus:not([readonly]),
+  input[type=tel]:focus:not([readonly]),
+  input[type=number]:focus:not([readonly]),
+  input[type=search]:focus:not([readonly]),
+  textarea.materialize-textarea:focus:not([readonly]) {
+    border-bottom: 1px solid #009688 !important;
+    box-shadow: 0 1px 0 0 #009688 !important;
+  }
+
+
+[type="checkbox"]:checked+label:before {
+  border-right: 2px solid #26a69a;
+border-bottom: 2px solid #26a69a;
+}
+
+
+
+
+
+
+  </style>
+
+</ion-content>
+</ion-view>

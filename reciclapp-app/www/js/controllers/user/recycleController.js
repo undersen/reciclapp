@@ -105,28 +105,22 @@ CONTROLLER DEFINITION
     }
 
     $scope.validateInfo = function(){
-      debugger;
+
       if($scope.declaration == undefined)
       {
-
-        if($scope.declaration.cans== undefined || $scope.declaration.cans < 0)
-        {
+        if($scope.declaration.cans== undefined || $scope.declaration.cans < 0){
           Materialize.toast('Latas debe ser mayor que 1',4000)
-
           return;
         }
-        if($cope.declaration.paperboard == undefined || $scope.declaration.paperboard < 0)
-        {
+        if($cope.declaration.paperboard == undefined || $scope.declaration.paperboard < 0){
           Materialize.toast('Carton debe ser mayor que 1',4000)
           return;
         }
-        if($scope.declaration.plastic == undefined || $scope.declaration.plastic== 0)
-        {
+        if($scope.declaration.plastic == undefined || $scope.declaration.plastic== 0){
           Materialize.toast('Plastico debe ser mayor que 1',4000)
           return;
         }
-        if($scope.declaration.glass == undefined || $scope.declaration.glass== 0)
-        {
+        if($scope.declaration.glass == undefined || $scope.declaration.glass== 0){
           Materialize.toast('Vidrio debe ser mayor que 1',4000)
           return;
         }
@@ -141,8 +135,6 @@ CONTROLLER DEFINITION
           return;
         }
         return true;
-
-
       }else{
         console.log("declaration is undefined");
       }

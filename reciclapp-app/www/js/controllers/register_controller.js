@@ -23,8 +23,6 @@ CONTROLLER DEFINITION
         $scope.user = StorageFacebookService.getCurrentFacebookUser();
         $scope.user.address ={};
         console.log('facebookAcoount');
-
-
         $('email-label').addClass('active');
         $('name-label').addClass('active');
 
@@ -174,7 +172,7 @@ CONTROLLER DEFINITION
 
     $scope.commercePhoto = function(){var image = takeASelfie();}
 
-    $scope.userPhoto = function(){var image = takeASelfie();}
+    $scope.userPhoto = function(){$scope.user.image = takeASelfie();}
 
 
 //     $scope.loadGPS = function () {
@@ -225,7 +223,6 @@ CONTROLLER DEFINITION
       $scope.map = new google.maps.Map(document.getElementById('map'), {
         zoom: 10,
         center: {lat: -33.4727091, lng: -70.7699142}
-
       });
       $scope.geocoder = new google.maps.Geocoder;
       $scope.infowindow = new google.maps.InfoWindow;
@@ -282,14 +279,8 @@ CONTROLLER DEFINITION
 //           alert("Geocode was not successful for the following reason: " + status);
 //         }
 //       });
-//
 //     }
-//
-//
-//
-//
-//
-//
+
 //     $scope.proceesAddress = function(address) {
 //       debugger;
 //       var finalAddress ='';

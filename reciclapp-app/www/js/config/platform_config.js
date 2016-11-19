@@ -8,11 +8,13 @@ PLATFORM CONFIGURATION
 (function() {
 	this.app.run(function($ionicPlatform) {
 
-		var db =null;
+
 
 		$ionicPlatform.ready(function() {
 
 			// ionic.Platform.isFullScreen = true;
+			// $ionicConfigProvider.backButton.previousTitleText(false);
+
 
 			if(window.cordova && window.cordova.plugins.Keyboard && window.cordova.plugins) {
 				// cordova.plugins.Keyboard.hideKeyboardAccessoryBar(true);

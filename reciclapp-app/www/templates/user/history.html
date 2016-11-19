@@ -1,0 +1,61 @@
+<!-- <ion-tabs class="tabs-positive tabs-icon-top">
+  <ion-tab title="Pendientes" icon-on="ion-ios-calendar" icon-off="ion-ios-calendar-outline">
+    <ion-view view-title="Tab Nav Stack">
+       <ion-content class="padding" style="margin-top:43px;">
+       </ion-content>
+     </ion-view>
+  </ion-tab>
+  <ion-tab title="Realizados" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+    <ion-view view-title="Tab Nav Stack">
+       <ion-content class="padding" style="margin-top:43px;">
+         DOS
+       </ion-content>
+     </ion-view>
+  </ion-tab>
+</ion-tabs> -->
+
+
+<ion-view   hide-back-button="true" ng-init="init()">
+  <ion-content>
+
+    <div class="row" ng-show="declaration.length == 0">
+            <div class="col s12 m6" style="padding:0px;">
+              <div class="card blue-grey darken-1" style="padding:0px;">
+                <div class="card-content white-text">
+
+                  <p>Aun no realizas ninguna declaracion.</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="row" ng-repeat="declaration in declarations" style="margin-top:30px;">
+            <div class="col s12 m7">
+              <div class="card" style="margin:0px;padding:0px">
+                <div class="card-image" style="height:30vh;">
+                <div id="map{{declaration.id_dec}}" class="mapPastJobs activator" ></div>
+                   <!-- <span class="card-title  grey-text text-darken-4">Card Title</span> -->
+                </div>
+                <div class="card-content">
+                  <i class="material-icons activator right">more_vert</i>
+                  <p style="margin-left:40px;" >{{declaration.fecha_creacion}}
+
+                </div>
+                <div class="card-reveal" style="z-index:10">
+         <span class="card-title grey-text text-darken-4"><i class="material-icons right">close</i></span>
+         <p>maaaaas info</p>
+         <p style="font-size:12px;">Mas informacion</p>
+         <p>Aqui va a ir mas info</p>
+       </div>
+              </div>
+            </div>
+          </div>
+
+
+          <style media="screen">
+                .mapPastJobs { height: 100%; width: 100% }
+              </style>
+
+  </ion-content>
+</ion-view>

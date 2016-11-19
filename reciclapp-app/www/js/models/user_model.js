@@ -48,7 +48,8 @@
 					  fecha_nacimiento: "2011-11-11",
 					  contrasena: user.password,
 					  rut: user.commerce_dni,
-					  encargado: user.commerce_user
+					  encargado: user.commerce_user,
+						imagen_encode : user.image
 
 					}
         }).then(function(response) {
@@ -97,7 +98,7 @@
 				});
 				return defer.promise;
 			},
-			
+
 			existUser: function(email) {
 				var defer = $q.defer();
 				$http({

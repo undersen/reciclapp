@@ -9,18 +9,15 @@ CONTROLLER DEFINITION
   this.app.controller("GiftsController", ["$scope", "$state",
   function($scope, $state) {
 
-    $scope.init = function() {
+    $scope.init = function() {};
 
-    };
 
-    $('.collapse').on('click',function(e){
-      e.preventDefault();
-      $(this).toggleClass('active');
-    });
+    $scope.goToGifts= function(category){
 
-    $scope.goRecycle= function() {
-      debugger;
+      $state.go('user.categoryGifts',{category: category})
     }
+
+
 
   }]);
 }).call(this);
